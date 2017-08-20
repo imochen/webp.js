@@ -3,12 +3,14 @@
 var path = require('path');
 var gulp = require('gulp');
 var gulpWebpack = require('gulp-webpack');
+var replace = require('gulp-replace');
 var webpack = require('webpack');
+var version = require('../../package.json').version;
 
 var conf = require('../config.js');
 
 gulp.task('buildjs', function() {
-  return gulp.src(path.resolve(conf.srcDir, 'index.js'))
+  return gulp.src(path.resolve(conf.workDir, 'index.js'))
     .pipe(gulpWebpack({
       debug: true,
       output: {
@@ -19,6 +21,7 @@ gulp.task('buildjs', function() {
         new webpack.optimize.DedupePlugin()
       ]
     }))
+    .pipe(replace('@VERSION', version))
     .pipe(gulp.dest(conf.distDir))
     .pipe(gulpWebpack({
       devtool: 'source-map',
