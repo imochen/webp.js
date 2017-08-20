@@ -44,9 +44,23 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
+	/* WEBPACK VAR INJECTION */(function(global) {(function(global) {
+
+	  var webpjs = __webpack_require__(1);
+	  webpjs.version = '0.1.0';
+	  global.webpjs = webpjs;
+
+	})((typeof window === 'undefined') ? global : window)
+
+	/* WEBPACK VAR INJECTION */}.call(exports, (function() { return this; }())))
+
+/***/ },
+/* 1 */
+/***/ function(module, exports, __webpack_require__) {
+
 	'use strict';
 
-	var util = __webpack_require__(1);
+	var util = __webpack_require__(2);
 
 	//the key & value for cookie & localStorage
 	var KEY = 'webp';
@@ -78,7 +92,7 @@
 
 
 /***/ },
-/* 1 */
+/* 2 */
 /***/ function(module, exports) {
 
 	'use strict';
