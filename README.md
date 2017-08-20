@@ -1,5 +1,5 @@
 # webp.js
-[![npm](https://img.shields.io/npm/v/webp.js.svg)](https://www.npmjs.com/package/webp.js)
+[![npm](https://img.shields.io/npm/v/webp.js.svg)](https://www.npmjs.com/package/webp.js)  [![Build Status](https://travis-ci.org/imochen/webp.js.svg?branch=master)](https://travis-ci.org/imochen/webp.js) [![Coverage Status](https://coveralls.io/repos/github/imochen/webp.js/badge.svg?branch=master)](https://coveralls.io/github/imochen/webp.js?branch=master)
 
 webp.js is a library for webp detection.
 
