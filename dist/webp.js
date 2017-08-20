@@ -47,7 +47,7 @@
 	/* WEBPACK VAR INJECTION */(function(global) {(function(global) {
 
 	  var webpjs = __webpack_require__(1);
-	  webpjs.version = '0.1.0';
+	  webpjs.version = '0.2.0';
 	  global.webpjs = webpjs;
 
 	})((typeof window === 'undefined') ? global : window)
