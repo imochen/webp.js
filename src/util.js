@@ -1,10 +1,12 @@
 'use strict';
 
+
 /**
  * [loadImage]
  * @param  {[String]}   url [image url]
  * @param  {Function} fn  [load success callback]
  */
+/* istanbul ignore next */
 function loadImage(url, fn) {
   var image = new Image();
   image.onload = function() {
@@ -62,28 +64,10 @@ function checkLocalStorage(key, value) {
   return window.localStorage && (localStorage.getItem(key) === value);
 }
 
-//the key & value for cookie & localStorage
-var KEY = 'webp';
-var VALUE = '1';
-
-//for webp detection
-var WEBP_URL = 'data:image/webp;base64,UklGRiQAAABXRUJQVlA4IBgAAAAwAQCdASoCAAEAAQAcJaQAA3AA/v4G0AA=';
-
-/**
- * @param  {[Object]} options https://github.com/imochen/webp.js/blob/master/README.md
- */
-module.exports = function(options) {
-  options = options || {};
-  if (options.type === 'cookie') {
-    if (checkCookie(KEY, VALUE)) return true;
-    loadImage(WEBP_URL, function() {
-      setCookie(KEY, VALUE, options.domain);
-    })
-  } else {
-    if (checkLocalStorage(KEY, VALUE)) return true;
-    loadImage(WEBP_URL, function() {
-      setLocalStorage(KEY, VALUE);
-    })
-  }
-  return false;
+module.exports = {
+  loadImage: loadImage,
+  setCookie: setCookie,
+  checkCookie: checkCookie,
+  setLocalStorage: setLocalStorage,
+  checkLocalStorage: checkLocalStorage
 }
